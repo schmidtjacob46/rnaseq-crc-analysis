@@ -1,0 +1,27 @@
+# Raw data
+data/
+*.fastq
+*.fastq.gz
+*.sra
+
+# Alignment files
+align/
+*.bam
+*.bai
+
+# STAR index
+reference/star_index/
+
+# Logs
+logs/
+
+# Temp / misc
+*.log
+*.out
+
+# R
+.Rhistory
+.RData
+
+# Mac
+.DS_Store
