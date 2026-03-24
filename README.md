@@ -21,16 +21,16 @@ FASTQ → STAR alignment → BAM → featureCounts → count matrix → DESeq2 �
 ## 📊 Key Results
 
 ### 🔬 Top Upregulated Genes (Tumor)
-- ETV4  
-- LGR5  
-- FOXQ1  
-- CEMIP  
+- ETV4
+- LGR5
+- FOXQ1
+- CEMIP
 
 ### 🔻 Top Downregulated Genes (Tumor)
-- SCNN1B  
-- MS4A12  
-- CLCA4  
-- SFRP1  
+- SCNN1B
+- MS4A12
+- CLCA4
+- SFRP1
 
 ---
 
@@ -47,19 +47,19 @@ FASTQ → STAR alignment → BAM → featureCounts → count matrix → DESeq2 �
 ## 🧪 Methods
 
 ### Alignment
-- Tool: STAR  
-- Reference: GENCODE v26  
+- Tool: STAR
+- Reference: GENCODE v26
 
 ### Quantification
-- Tool: featureCounts  
-- Feature type: exon → gene-level aggregation  
+- Tool: featureCounts
+- Feature type: exon → gene-level aggregation
 
 ### Differential Expression
-- Tool: DESeq2  
-- Design: ~ condition (Tumor vs Normal)  
+- Tool: DESeq2
+- Design: ~ condition (Tumor vs Normal)
 - Significance thresholds:
-  - adjusted p-value < 0.05  
-  - |log2FoldChange| > 1  
+  - adjusted p-value < 0.05
+  - |log2FoldChange| > 1
 
 ---
 
@@ -79,6 +79,7 @@ rnaseq-crc-analysis/
     ├── volcano_plot.png
     ├── top_upregulated_genes.csv
     └── top_downregulated_genes.csv
+```
 
 ---
 
@@ -87,19 +88,37 @@ rnaseq-crc-analysis/
 ### 1. Download FASTQ files
 ```bash
 bash scripts/01_download_fastq.sh
+```
+
 ### 2. Align reads with STAR
+```bash
 bash scripts/02_star_align.sh
+```
+
 ### 3. Generate gene counts
+```bash
 bash scripts/03_featurecounts.sh
+```
+
 ### 4. Run differential expression (DESeq2)
+```r
 source("analysis/01_deseq2_analysis.R")
-##💡 Skills Demonstrated
-    -RNA-seq pipeline development
-    -Linux & Bash scripting
-    -High-throughput alignment (STAR)
-    -Read quantification (featureCounts)
-    -Statistical modeling (DESeq2)
-Data visualization (PCA, volcano plots)
-📌 Notes
-Raw FASTQ and BAM files are not included due to size constraints
-All results are reproducible using the provided scripts
+```
+
+---
+
+## 💡 Skills Demonstrated
+
+- RNA-seq pipeline development
+- Linux & Bash scripting
+- High-throughput alignment (STAR)
+- Read quantification (featureCounts)
+- Statistical modeling (DESeq2)
+- Data visualization (PCA, volcano plots)
+
+---
+
+## 📌 Notes
+
+- Raw FASTQ and BAM files are not included due to size constraints
+- All results are reproducible using the provided scripts
